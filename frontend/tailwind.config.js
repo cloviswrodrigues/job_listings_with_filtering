@@ -6,6 +6,7 @@ export default {
   ],
   theme: {
     colors: {
+      'white': 'white',
       'cyan-dark': '#5ba4a4',
       'cyan-light': '	#effafa',
       'cyan-light-2': '	#eef6f6',
