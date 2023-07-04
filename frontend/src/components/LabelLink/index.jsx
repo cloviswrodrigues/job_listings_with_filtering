@@ -12,7 +12,7 @@ const LabelLink = ({ children }) => {
 };
 
 LabelLink.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default LabelLink;
