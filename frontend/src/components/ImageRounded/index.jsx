@@ -1,18 +1,17 @@
-import PropTypes from 'prop-types'
-
+import PropTypes from "prop-types";
 
 const ImageRounded = ({ src, alt }) => {
-  console.log(src)
+  console.log(src);
   return (
     <>
-      <img src={src} alt={alt} className='rounded-full' />
+      <img src={src} alt={alt} className="rounded-full" />
     </>
-  )
-}
+  );
+};
 
 ImageRounded.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,
-}
+};
 
-export default ImageRounded
+export default ImageRounded;
