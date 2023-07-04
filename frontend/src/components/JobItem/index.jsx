@@ -6,13 +6,18 @@ import LabelLink from "../LabelLink";
 const JobItem = ({ data }) => {
   const requirements = [data.role, data.level, ...data.languages] || [];
 
-  const featuredJob = data.id <= 1 ? true : false;
+  function hasJobPostedLastTwoDays(postedAt) {
+    return /[0-2]{1}d/.exec(postedAt);
+  }
+
+  const featuredJob = data.id <= 2 ? true : false;
   const styleFeaturedJob = featuredJob && "border-l-4 border-cyan-dark";
+  const newJob = hasJobPostedLastTwoDays(data.postedAt) ? true : false;
 
   if (!data) return null;
   return (
     <li
-      className={`bg-white p-7 rounded-md flex items-center gap-6 shadow-lg ${styleFeaturedJob}`}
+      className={`bg-white p-7 rounded-md flex items-center gap-6 shadow-lg mb-6 ${styleFeaturedJob}`}
     >
       <div>
         <ImageRounded src={data.logo} />
@@ -23,6 +28,11 @@ const JobItem = ({ data }) => {
             <span className="text-sm text-cyan-dark font-bold">
               {data.company}
             </span>
+            {newJob && (
+              <span className="bg-cyan-dark px-2 py-1 rounded-xl ml-2 text-xs text-white font-bold">
+                NEW!
+              </span>
+            )}
             {featuredJob && (
               <span className="bg-cyan-very-dark px-2 py-1 rounded-xl ml-2 text-xs text-white font-bold">
                 FEATURED
