@@ -4,7 +4,7 @@ const LabelLink = ({ children }) => {
   return (
     <a
       href="#"
-      className="bg-cyan-light-2 px-2 py-1 text-sm text-cyan-dark font-bold rounded-md hover:bg-cyan-dark hover:text-white"
+      className="bg-cyan-light-2 px-2 py-1.5 text-sm text-cyan-dark font-bold rounded-md hover:bg-cyan-dark hover:text-white"
     >
       {children}
     </a>
