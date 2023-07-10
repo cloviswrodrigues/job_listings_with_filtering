@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Label from "../Label";
 import ButtonClose from "../ButtonClose";
 
-const Filters = ({ data, onRemoveFilter }) => {
+const Filters = ({ data, onRemoveFilter, onClearFilters }) => {
   if (!data) return null;
   return (
     <div className="bg-white rounded-md px-7 py-4 w-full shadow-lg flex justify-between">
@@ -19,7 +19,10 @@ const Filters = ({ data, onRemoveFilter }) => {
           </li>
         ))}
       </ul>
-      <button className="text-sm text-cyan-dark font-bold underline">
+      <button
+        onClick={onClearFilters}
+        className="text-sm text-cyan-dark font-bold underline"
+      >
         Clear
       </button>
     </div>
@@ -27,8 +30,9 @@ const Filters = ({ data, onRemoveFilter }) => {
 };
 
 Filters.propTypes = {
-  data: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
   onRemoveFilter: PropTypes.func.isRequired,
+  onClearFilters: PropTypes.func.isRequired,
 };
 
 export default Filters;
