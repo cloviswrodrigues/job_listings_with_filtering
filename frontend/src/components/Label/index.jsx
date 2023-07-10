@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const LabelLink = ({
+const Label = ({
   children,
   hover = true,
   roudendRight = true,
@@ -12,25 +12,25 @@ const LabelLink = ({
   const additionalClass = `${classHover} ${classRoudendRight} ${classClickable}`;
 
   return (
-    <button
+    <div
       className={`bg-cyan-light-2 px-2 py-1.5 text-sm text-cyan-dark font-bold rounded-l-md  ${additionalClass}`}
     >
       {children}
-    </button>
+    </div>
   );
 };
 
-LabelLink.propTypes = {
+Label.propTypes = {
   children: PropTypes.string.isRequired,
   hover: PropTypes.bool,
   roudendRight: PropTypes.bool,
   clickable: PropTypes.bool,
 };
 
-LabelLink.defaulProps = {
+Label.defaulProps = {
   hover: true,
   roudendRight: true,
   clickable: true,
 };
 
-export default LabelLink;
+export default Label;

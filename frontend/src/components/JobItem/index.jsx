@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
 import ImageRounded from "../ImageRounded";
-import LabelLink from "../LabelLink";
+import Label from "../Label";
 
-const JobItem = ({ data }) => {
+const JobItem = ({ data, onAddFilter }) => {
   const requirements = [data.role, data.level, ...data.languages] || [];
 
   function hasJobPostedLastTwoDays(postedAt) {
@@ -55,7 +55,9 @@ const JobItem = ({ data }) => {
           <ul className="flex gap-4">
             {requirements.map((requirement) => (
               <li key={requirement}>
-                <LabelLink>{requirement}</LabelLink>
+                <button onClick={() => onAddFilter(requirement)}>
+                  <Label>{requirement}</Label>
+                </button>
               </li>
             ))}
           </ul>
@@ -67,6 +69,7 @@ const JobItem = ({ data }) => {
 
 JobItem.propTypes = {
   data: PropTypes.shape().isRequired,
+  onAddFilter: PropTypes.func.isRequired,
 };
 
 export default JobItem;

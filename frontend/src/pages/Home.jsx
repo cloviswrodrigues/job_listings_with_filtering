@@ -8,15 +8,16 @@ import dataJson from "../repositories/data.json";
 
 const Home = () => {
   const [jobs, setJobs] = useState(null);
-  const [filters, setFilters] = useState(["Frontend", "CSS", "Javascript"]);
+  const [filters, setFilters] = useState([]);
 
   useEffect(() => {
     setJobs(dataJson);
   }, []);
 
   function addFilter(filter) {
-    setFilters((prevFilters) => [...prevFilters, filter]);
-    console.log("add filter");
+    if (filters.indexOf(filter) === -1) {
+      setFilters((prevFilters) => [...prevFilters, filter]);
+    }
   }
 
   function removeFilter(filter) {
@@ -29,11 +30,11 @@ const Home = () => {
       <Header />
       <main className="bg-cyan-light min-h-[80vh] py-14">
         <div className="max-w-5xl m-auto">
-          <div className="absolute top-36 w-full max-w-5xl">
-            {filters && (
+          {filters.length > 0 && (
+            <div className="absolute top-36 w-full max-w-5xl">
               <Filters data={filters} onRemoveFilter={removeFilter} />
-            )}
-          </div>
+            </div>
+          )}
           <div>
             <JobLists data={jobs} onAddFilter={addFilter} />
           </div>
