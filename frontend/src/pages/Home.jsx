@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main className="bg-cyan-light min-h-[80vh] py-14">
+      <main className="bg-cyan-light min-h-[80vh] py-14 px-6">
         <div className="max-w-5xl m-auto">
           {filters.length > 0 && (
             <div className="absolute top-36 w-full max-w-5xl">

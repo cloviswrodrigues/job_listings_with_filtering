@@ -17,12 +17,12 @@ const JobItem = ({ data, onAddFilter }) => {
   if (!data) return null;
   return (
     <li
-      className={`bg-white p-7 rounded-md flex items-center gap-6 shadow-lg mb-6 ${styleFeaturedJob}`}
+      className={`relative bg-white p-7 rounded-md flex items-center gap-6 shadow-lg mb-12 lg:mb-6 ${styleFeaturedJob}`}
     >
-      <div>
+      <div className="absolute -top-7 w-14 lg:relative lg:w-auto lg:top-0">
         <ImageRounded src={data.logo} />
       </div>
-      <div className="w-full flex justify-between items-center">
+      <div className="w-full lg:flex justify-between items-center">
         <div>
           <div>
             <span className="text-sm text-cyan-dark font-bold">
@@ -54,7 +54,7 @@ const JobItem = ({ data, onAddFilter }) => {
           </ul>
         </div>
         <div>
-          <ul className="flex gap-4">
+          <ul className="flex flex-wrap gap-4 border-t border-cyan-dark-grayish mt-4 pt-4 lg:border-0">
             {requirements.map((requirement) => (
               <li key={requirement}>
                 <button onClick={() => onAddFilter(requirement)}>

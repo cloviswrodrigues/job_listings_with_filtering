@@ -1,12 +1,6 @@
 const Header = () => {
   return (
-    <header className="bg-cyan-dark h-44">
-      <img
-        className="mx-auto bg-cover w-full h-full"
-        src="../bg-header-desktop.svg"
-        alt=""
-      />
-    </header>
+    <header className="bg-cyan-dark bg-header-mobile bg-no-repeat bg-cover h-44 lg:bg-header-desktop"></header>
   );
 };
 

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const ImageRounded = ({ src, alt }) => {
   return (
     <>
-      <img src={src} alt={alt} className="rounded-full" />
+      <img src={src} alt={alt} className="rounded-full w-full" />
     </>
   );
 };
