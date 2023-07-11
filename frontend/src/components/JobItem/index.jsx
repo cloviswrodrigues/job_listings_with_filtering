@@ -45,9 +45,11 @@ const JobItem = ({ data, onAddFilter }) => {
           >
             {data.position}
           </a>
-          <ul className="flex text-cyan-dark-grayish gap-6 text-sm font-medium">
+          <ul className="flex text-cyan-dark-grayish gap-4 text-sm font-medium">
             <li>{data.postedAt}</li>
-            <li>{data.contract}</li>
+            <li className="before:content-['•'] before:mr-3 after:content-['•'] after:ml-3">
+              {data.contract}
+            </li>
             <li>{data.location}</li>
           </ul>
         </div>
